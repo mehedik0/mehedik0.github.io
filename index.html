@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Dear Babygirl.</strong>
+                        <p>
+                            I am so lucky to have you in my life, and getting to enjoy days like these with you makes it even more fun.
+                            I can't express the joy I get to make you feel loved even if its a little bit.
+                            I love you to eternity and more my pookie bear ^_^ 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+            <button class="nextButton">Next</button> <!-- Next button -->
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const nextButton = document.querySelector('.nextButton');
+
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+
+            // Show the Next button if envelope is opened
+            if (envelope.classList.contains('flap')) {
+                nextButton.style.display = 'block';
+            } else {
+                nextButton.style.display = 'none';
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            // Redirect to another page when Next is clicked
+            window.location.href = "second.html"; // Change this URL to your desired destination
+        });
+    </script>
+</body>
+</html>
